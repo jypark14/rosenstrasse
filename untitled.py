@@ -41,7 +41,7 @@ while carryOn:
      # --- Game logic should go here
  
      # --- Drawing code should go here
-     # First, clear the screen to white. 
+     # First, clear the screen to white.  
      	screen.fill(WHITE)
      	screen.blit(backgroundImg, (0,0))	
      	screen.blit(optionImg, (100,600))	
