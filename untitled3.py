@@ -18,6 +18,7 @@ import os
 import random
 pygame.init()
 
+sound = pygame.transform.scale(pygame.image.load("images/gameimages/sound.png"), (40,40))
 risk = pygame.transform.scale(pygame.image.load("images/gameimages/risk.jpg"), (230,80))
 background = pygame.transform.scale(pygame.image.load("images/gameimages/back_intro.png"), (1200, 900))
 backgroundImg = pygame.transform.scale(pygame.image.load("images/mainbg.png"), (1200,900))
@@ -365,75 +366,71 @@ class InputBox:
         pygame.draw.rect(screen, self.color, self.rect, 2)
         screen.blit(prevImg, (0,0))
 
-########################################################
-#risk matrix boxes
-input_box1 = InputBox(500, 100, 50, 32, "I am Jewish (+10)")
-input_box2 = InputBox(500, 150, 50, 32, "I am a mischling (+5)")
-input_box3 = InputBox(500, 200, 50, 32, "I am married to an Aryan... (-5)")
-input_box4 = InputBox(500, 250, 50, 32, "...AND we have living baptized children (-3)")
-input_box5 = InputBox(500, 300, 50, 32, "I am married to a mischling (+2)")
-input_box6 = InputBox(500, 350, 50, 32, "I am registered with the Jewish community (+3)")
-input_box7 = InputBox(500, 400, 50, 32, "I have been in trouble with the authorities (+2)")
-input_box8 = InputBox(500, 450, 50, 32, "Total Score")
-input_boxExempt1 = InputBox(500,550, 50, 32, "I am working as an orderly (Exempt)")
-input_boxExempt1.txt_surface = FONT.render("No", False, input_boxExempt1.color)
-input_box9 = InputBox(650, 100, 50, 32, "")
-input_box10 = InputBox(650, 150, 50, 32, "")
-input_box11 = InputBox(650, 200, 50, 32, "")
-input_box12 = InputBox(650, 250, 50, 32, "")
-input_box13 = InputBox(650, 300, 50, 32, "")
-input_box14 = InputBox(650, 350, 50, 32, "")
-input_box15 = InputBox(650, 400, 50, 32, "")
-input_box16 = InputBox(650, 450, 50, 32, "")
-input_boxExempt2 = InputBox(650, 550, 50, 32, "")
-input_boxExempt2.txt_surface = FONT.render("No", False, input_boxExempt2.color)
-input_box17 = InputBox(800, 100, 50, 32, "")
-input_box18 = InputBox(800, 150, 50, 32, "")
-input_box19 = InputBox(800, 200, 50, 32, "")
-input_box20 = InputBox(800, 250, 50, 32, "")
-input_box21 = InputBox(800, 300, 50, 32, "")
-input_box22 = InputBox(800, 350, 50, 32, "")
-input_box23 = InputBox(800, 400, 50, 32, "")
-input_box24 = InputBox(800, 450, 50, 32, "")
-input_boxExempt3 = InputBox(800, 550, 50, 32, "")
-input_boxExempt3.txt_surface = FONT.render("No", False, input_boxExempt3.color)
-input_box25 = InputBox(950, 100, 50, 32, "")
-input_box26 = InputBox(950, 150, 50, 32, "")
-input_box27 = InputBox(950, 200, 50, 32, "")
-input_box28 = InputBox(950, 250, 50, 32, "")
-input_box29 = InputBox(950, 300, 50, 32, "")
-input_box30 = InputBox(950, 350, 50, 32, "")
-input_box31 = InputBox(950, 400, 50, 32, "")
-input_box32 = InputBox(950, 450, 50, 32, "")
-input_boxExempt4 = InputBox(950, 550, 50,  32, "")
-input_boxExempt4.txt_surface = FONT.render("No", False, input_boxExempt4.color)
+		########################################################
+		#risk matrix boxes
+		input_box1 = InputBox(500, 100, 50, 32, "I am Jewish (+10)")
+		input_box2 = InputBox(500, 150, 50, 32, "I am a mischling (+5)")
+		input_box3 = InputBox(500, 200, 50, 32, "I am married to an Aryan... (-5)")
+		input_box4 = InputBox(500, 250, 50, 32, "...AND we have living baptized children (-3)")
+		input_box5 = InputBox(500, 300, 50, 32, "I am married to a mischling (+2)")
+		input_box6 = InputBox(500, 350, 50, 32, "I am registered with the Jewish community (+3)")
+		input_box7 = InputBox(500, 400, 50, 32, "I have been in trouble with the authorities (+2)")
+		input_box8 = InputBox(500, 450, 50, 32, "Total Score")
+		input_boxExempt1 = InputBox(500,550, 50, 32, "I am working as an orderly (Exempt)")
+		input_boxExempt1.txt_surface = FONT.render("No", False, input_boxExempt1.color)
+		input_box9 = InputBox(650, 100, 50, 32, "")
+		input_box10 = InputBox(650, 150, 50, 32, "")
+		input_box11 = InputBox(650, 200, 50, 32, "")
+		input_box12 = InputBox(650, 250, 50, 32, "")
+		input_box13 = InputBox(650, 300, 50, 32, "")
+		input_box14 = InputBox(650, 350, 50, 32, "")
+		input_box15 = InputBox(650, 400, 50, 32, "")
+		input_box16 = InputBox(650, 450, 50, 32, "")
+		input_boxExempt2 = InputBox(650, 550, 50, 32, "")
+		input_boxExempt2.txt_surface = FONT.render("No", False, input_boxExempt2.color)
+		input_box17 = InputBox(800, 100, 50, 32, "")
+		input_box18 = InputBox(800, 150, 50, 32, "")
+		input_box19 = InputBox(800, 200, 50, 32, "")
+		input_box20 = InputBox(800, 250, 50, 32, "")
+		input_box21 = InputBox(800, 300, 50, 32, "")
+		input_box22 = InputBox(800, 350, 50, 32, "")
+		input_box23 = InputBox(800, 400, 50, 32, "")
+		input_box24 = InputBox(800, 450, 50, 32, "")
+		input_boxExempt3 = InputBox(800, 550, 50, 32, "")
+		input_boxExempt3.txt_surface = FONT.render("No", False, input_boxExempt3.color)
+		input_box25 = InputBox(950, 100, 50, 32, "")
+		input_box26 = InputBox(950, 150, 50, 32, "")
+		input_box27 = InputBox(950, 200, 50, 32, "")
+		input_box28 = InputBox(950, 250, 50, 32, "")
+		input_box29 = InputBox(950, 300, 50, 32, "")
+		input_box30 = InputBox(950, 350, 50, 32, "")
+		input_box31 = InputBox(950, 400, 50, 32, "")
+		input_box32 = InputBox(950, 450, 50, 32, "")
+		input_boxExempt4 = InputBox(950, 550, 50,  32, "")
+		input_boxExempt4.txt_surface = FONT.render("No", False, input_boxExempt4.color)
 
-input_boxes = [input_box1, input_box2, input_box3, input_box4, input_box5, input_box6, input_box7, input_box8,
-               input_box9, input_box10,input_box11, input_box12, input_box13, input_box14, input_box15, input_box16,
-               input_box17, input_box18,input_box19, input_box20, input_box21, input_box22, input_box23, input_box24,
-               input_box25, input_box26,input_box27, input_box28, input_box29, input_box30, input_box31, input_box32,
-               input_boxExempt1, input_boxExempt2, input_boxExempt3, input_boxExempt4]
+		input_boxes = [input_box1, input_box2, input_box3, input_box4, input_box5, input_box6, input_box7, input_box8,
+		               input_box9, input_box10,input_box11, input_box12, input_box13, input_box14, input_box15, input_box16,
+		               input_box17, input_box18,input_box19, input_box20, input_box21, input_box22, input_box23, input_box24,
+		               input_box25, input_box26,input_box27, input_box28, input_box29, input_box30, input_box31, input_box32,
+		               input_boxExempt1, input_boxExempt2, input_boxExempt3, input_boxExempt4]
 
 
 class Menu(object): 
     def __init__(self):  
         self.instructionBox = pygame.Rect(185, 640, 230, 80)  
         self.playBox = pygame.Rect(785, 640, 230, 80)    
-        homeScreen = True 
+        homeScreen = True
 
+         
+    #risk matrix stuff 
     def display_risk(self, index):
         num = index
         clock = pygame.time.Clock()
         screen.blit
         self.backBox = pygame.Rect(0,0, 100,100)
-
-
-
-        #creates risk matrixes for each character
-
-        
+        #creates risk matrixes for each character        
         done = False
-
         text = '0'
         while not done:
             for event in pygame.event.get():
@@ -834,8 +831,6 @@ class Menu(object):
                     input_box16.txt_surface = FONT.render('0', True, input_box16.color)
                     input_boxExempt2.txt_surface = FONT.render('Yes', True, input_boxExempt2.color)
 
-
-
                 elif event.type == pygame.KEYDOWN and input_box17.updated == False and input_box17.active == True:    
                     input_box17.txt_surface = FONT.render(my_text, True, input_box17.color)
                     input_box24.sum += int(my_text)
@@ -975,8 +970,6 @@ class Menu(object):
                     input_box23.txt_surface = FONT.render('0', True, input_box23.color)
                     input_box24.txt_surface = FONT.render('0', True, input_box24.color)
                     input_boxExempt3.txt_surface = FONT.render('Yes', True, input_boxExempt3.color)
-
-
 
                 elif event.type == pygame.KEYDOWN and input_box25.updated == False and input_box25.active == True:    
                     input_box25.txt_surface = FONT.render(my_text, True, input_box25.color)
@@ -1181,6 +1174,8 @@ class Menu(object):
                 if self.backBox.collidepoint(mouseposition) and mousepressed[0] == 1: 
                     self.menu(index)
             pygame.display.update()
+
+#orientation stuff 
 
 
     
@@ -2490,7 +2485,6 @@ class Menu(object):
                         self.lineups_casting12()
                         pygame.display.update()
  
-
     def menu(self, index): 
         screen.blit(backgroundImg, (0,0))
         screen.blit(logoTextImg, (400,10))
