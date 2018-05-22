@@ -19,9 +19,24 @@ import random
 pygame.init()
 
 alertbox = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
+cardBg2 = pygame.transform.scale(pygame.image.load("images/cardbackgroundImg.png"), (210,60))
+
 alertbox2 = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
 alertbox3 = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
-b = pygame.transform.scale(pygame.image.load("images/gameimages/b.png"), (210,200))
+risk15 = pygame.transform.scale(pygame.image.load("gameimages/risk/15.png"), (590,70))
+risk19 = pygame.transform.scale(pygame.image.load("gameimages/risk/19.png"), (590,70))
+risk26 = pygame.transform.scale(pygame.image.load("gameimages/risk/26.png"), (590,70))
+risk30 = pygame.transform.scale(pygame.image.load("gameimages/risk/30.png"), (590,70))
+risk31 = pygame.transform.scale(pygame.image.load("gameimages/risk/31.png"), (590,70))
+risk33 = pygame.transform.scale(pygame.image.load("gameimages/risk/33.png"), (590,70))
+risk34 = pygame.transform.scale(pygame.image.load("gameimages/risk/34.png"), (590,70))
+risk40 = pygame.transform.scale(pygame.image.load("gameimages/risk/40.png"), (590,70))
+risk45 = pygame.transform.scale(pygame.image.load("gameimages/risk/45.png"), (590,70))
+risk46 = pygame.transform.scale(pygame.image.load("gameimages/risk/46.png"), (590,70))
+risk47 = pygame.transform.scale(pygame.image.load("gameimages/risk/47.png"), (590,70))
+risk50 = pygame.transform.scale(pygame.image.load("gameimages/risk/50.png"), (590,70))
+risk54 = pygame.transform.scale(pygame.image.load("gameimages/risk/54.png"), (590,70))
+risk55 = pygame.transform.scale(pygame.image.load("gameimages/risk/55.png"), (590,70))
 
 next2 = pygame.transform.scale(pygame.image.load("images/gameimages/next.png"), (30,30))
 
@@ -1211,14 +1226,12 @@ class Menu(object):
         self.backBox = pygame.Rect(1100,0, 100,100)        
         self.nextBox = pygame.Rect(1000, 680, 40, 40)
         longercards = 7, 13, 27, 28, 35, 43, 57, 65, 69 
-        riskCards = 15, 19, 26, 30, 31, 33, 34, 40, 45, 46, 47, 50, 54, 55
+        riskCards = [15, 19, 26, 30, 31, 33, 34, 40, 45, 46, 47, 50, 54, 55]
         screen.blit(cardBg, (0,0))
         screen.blit(alertbox2, (100, 525))
         screen.blit(alertbox3, (100, 590))
         screen.blit(prevImg, (1100, 0))
         screen.blit(risk, (88,440))
-
-        
 
         events = pygame.event.get()  # this will return a que of events
         running = True 
@@ -1231,8 +1244,47 @@ class Menu(object):
                         screen.blit(dirArray[index], (835,100))
                 if event.type == pygame.QUIT: 
                     sys.exit(0) 
-                if index == 2: 
-					screen.blit(alertbox, (10, 580))
+
+                if index in riskCards: 
+           	 		screen.blit(alertbox, (100, 460))
+           	 		screen.blit(risk, (88,440))
+
+                if index not in riskCards: 
+                	screen.blit(cardBg, (100,670))
+                	screen.blit(cardBg2, (100, 460))
+                	screen.blit(risk, (88, 440))
+
+
+                if index == 15: 
+					screen.blit(risk15, (100, 670))
+                if index == 19:
+					screen.blit(risk19, (100, 670))
+                if index == 26: 
+					screen.blit(risk26, (100, 670))
+                if index == 30: 
+					screen.blit(risk30, (100, 670))
+                if index == 31: 
+					screen.blit(risk31, (100, 670))
+                if index == 33: 
+					screen.blit(risk33, (100, 670))
+                if index == 34: 
+					screen.blit(risk34, (100, 670))
+                if index == 40: 
+					screen.blit(risk40, (100, 670))
+                if index == 45: 
+					screen.blit(risk45, (100, 670))
+                if index == 46: 
+					screen.blit(risk46, (100, 670))
+                if index == 47: 
+					screen.blit(risk47, (100, 670))
+                if index == 50: 
+					screen.blit(risk50, (100, 670))
+                if index == 54: 
+					screen.blit(risk54, (100, 670))
+                if index == 55: 
+					screen.blit(risk55, (100, 670))
+
+
                 if event.type == pygame.KEYDOWN: 
                     if event.key == pygame.K_LEFT and index > 1: 
                         index -= 1 
@@ -1271,14 +1323,6 @@ class Menu(object):
                     	screen.blit(dir69b, (835, 100)) 
 
                 
-                if index in riskCards: 
-           	 		screen.blit(alertbox, (100, 460))
-           	 		screen.blit(risk, (88,440))
-				
-
-
-
-
 
                 mouseposition = pygame.mouse.get_pos()  
                 mousepressed = pygame.mouse.get_pressed()
