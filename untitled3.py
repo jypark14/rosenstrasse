@@ -21,6 +21,7 @@ pygame.init()
 alertbox = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
 alertbox2 = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
 alertbox3 = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
+next2 = pygame.transform.scale(pygame.image.load("images/gameimages/next.png"), (30,30))
 
 sound = pygame.transform.scale(pygame.image.load("images/gameimages/sound.png"), (40,40))
 risk = pygame.transform.scale(pygame.image.load("images/gameimages/risk.png"), (230,110))
@@ -136,12 +137,11 @@ dir88 = pygame.transform.scale(pygame.image.load("images/dir/88.png"), (330,550)
 dir89 = pygame.transform.scale(pygame.image.load("images/dir/89.png"), (330,550))
 dir90 = pygame.transform.scale(pygame.image.load("images/dir/90.png"), (330,550))
 
-dirArray = [0, dir1, dir2, dir3, dir4, dir5, dir6, [dir7a, dir7b], dir8, dir9, dir10, dir11, dir12, [dir13a, dir13b], 
-dir14, dir15, dir16, dir17, dir18, dir19, dir20, dir21, dir22, dir23, dir24, dir25, dir26, [dir27a, dir27b], [dir28a, dir28b], 
-dir29, dir30, dir31, dir32, dir33, dir34, [dir35a, dir35b, dir35c, dir35d, dir35e, dir35f], dir36, dir37, dir38, dir39, 
-dir40, dir41, dir42, [dir43a, dir43b], 
-dir44, dir45, dir46, dir47, dir48, dir49, dir50, dir51, dir52, dir53, dir54, dir55, dir56, [dir57a, dir57b], dir58, 
-dir59, dir60, dir61, dir62, dir63, dir64, [dir65a, dir65b], dir66, dir67, dir68, [dir69a, dir69b], dir70, dir71, dir72, dir73,
+dirArray = [0, dir1, dir2, dir3, dir4, dir5, dir6, dir7a, dir8, dir9, dir10, dir11, dir12, dir13a, 
+dir14, dir15, dir16, dir17, dir18, dir19, dir20, dir21, dir22, dir23, dir24, dir25, dir26, dir27a, dir28a, 
+dir29, dir30, dir31, dir32, dir33, dir34, dir35a, dir36, dir37, dir38, dir39, 
+dir40, dir41, dir42, dir43a, dir44, dir45, dir46, dir47, dir48, dir49, dir50, dir51, dir52, dir53, dir54, dir55, dir56, dir57a, dir58, 
+dir59, dir60, dir61, dir62, dir63, dir64, dir65a, dir66, dir67, dir68, dir69a, dir70, dir71, dir72, dir73,
 dir74, dir75, dir76, dir77, dir78, dir79, dir80, dir81, dir82, dir83, dir84, dir85, dir86, dir87, dir88, 
 dir89, dir90]
 
@@ -1205,26 +1205,26 @@ class Menu(object):
 
     def playGame(self,index): 
         # screen.fill(WHITE)
-        self.riskBox = pygame.Rect(100, 500, 230, 80)    
-        self.backBox = pygame.Rect(1100,0, 100,100)
+        self.riskBox = pygame.Rect(88, 440, 230, 80)    
+        self.backBox = pygame.Rect(1100,0, 100,100)        
+        self.nextBox = pygame.Rect(1000, 680, 40, 40)
+        index2 = 0 
         longercards = 7, 13, 27, 28, 35, 43, 57, 65, 69 
-        
-        self.nextBox = pygame.Rect(980,650, 40, 40)
-
         screen.blit(cardBg, (0,0))
         screen.blit(alertbox, (100, 460))
         screen.blit(alertbox2, (100, 525))
         screen.blit(alertbox3, (100, 590))
-
         screen.blit(risk, (88,440))
-
         screen.blit(prevImg, (1100, 0))
+
+        screen.blit(alertbox, (100, 10))
+
         events = pygame.event.get()  # this will return a que of events
         running = True 
         while running:  
             events = pygame.event.get()  
             for event in events: 
-                if index >= 1 and index in longercards == False :
+                if index >= 1 and index:
                         screen.blit(cardLArray[index], (100,100))  
                         screen.blit(cardRArray[index], (435,100))   
                         screen.blit(dirArray[index], (835,100))
@@ -1235,20 +1235,29 @@ class Menu(object):
                         index -= 1 
                         screen.blit(cardLArray[index], (100,100))  
                         screen.blit(cardRArray[index], (435,100))
-                       	screen.blit(dirArray[index], (835,100))
-
-
+                        if index in longercards: 
+                        	screen.blit(next, (1000,680))
+                        else: 
+                        	screen.blit(cardBg, (1000,680))
                     if event.key == pygame.K_RIGHT and index < 90: 
                         index += 1 
                         screen.blit(cardLArray[index], (100,100))  
                         screen.blit(cardRArray[index], (435,100)) 
+                        screen.blit(dirArray[index], (835,100))
                         if index in longercards: 
-                        	screen.blit(next, (1000,680))
-                        	screen.blit(dirArray[index][0], (835,100))
-                        	if self.nextBox.collidepoint(mouseposition) and mousepressed[0] == 1: 
-                        			print 'c'
+                            screen.blit(next, (1000,680))                       	
                         else: 
-                        	screen.blit(dirArray[index], (835,100))
+                        	screen.blit(cardBg, (1000,680))
+                    if event.key == pygame.K_DOWN and index == 7: 
+                    	screen.blit(dir7b, (835, 100)) 
+                    if event.key == pygame.K_DOWN and index == 13: 
+                    	screen.blit(dir13b, (835, 100)) 
+                    if event.key == pygame.K_DOWN and index == 27: 
+                    	screen.blit(dir7b, (835, 100)) 
+                    if event.key == pygame.K_DOWN and index == 28: 
+                    	screen.blit(dir7b, (835, 100)) 
+                    if event.key == pygame.K_DOWN and index == 43: 
+                    	screen.blit(dir7b, (835, 100)) 
 
                 mouseposition = pygame.mouse.get_pos()  
                 mousepressed = pygame.mouse.get_pressed()
@@ -1257,6 +1266,8 @@ class Menu(object):
                     self.display_risk(index)
                 if self.backBox.collidepoint(mouseposition) and mousepressed[0] == 1: 
                     self.menu(index)
+                # if self.nextBox.collidepoint(mouseposition) and mousepressed[0] == 1: 
+                # 	print 'c'
             pygame.display.update()
 
 #orientation stuff 
@@ -2580,7 +2591,6 @@ class Menu(object):
             mouseposition = pygame.mouse.get_pos()  
             mousepressed = pygame.mouse.get_pressed()
             if self.instructionBox.collidepoint(mouseposition) and mousepressed[0] == 1:
-                print('b')
                 self.playInstructions()
             if self.playBox.collidepoint(mouseposition) and mousepressed[0] == 1:
                 self.playGame(index)
