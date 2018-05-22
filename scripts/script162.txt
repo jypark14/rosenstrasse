@@ -1,0 +1,1 @@
+Do not show the risk matrix to the players. Do not explain why you are marking the document, unless directed otherwise in the instructions.

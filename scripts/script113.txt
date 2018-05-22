@@ -1,0 +1,1 @@
+This scenario makes use of a variety of components: Character Sheets which are distributed to and managed by the players.

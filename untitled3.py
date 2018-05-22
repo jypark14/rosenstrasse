@@ -18,13 +18,17 @@ import os
 import random
 pygame.init()
 
+alertbox = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
+alertbox2 = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
+alertbox3 = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
+
 sound = pygame.transform.scale(pygame.image.load("images/gameimages/sound.png"), (40,40))
-risk = pygame.transform.scale(pygame.image.load("images/gameimages/risk.jpg"), (230,80))
+risk = pygame.transform.scale(pygame.image.load("images/gameimages/risk.png"), (230,110))
 background = pygame.transform.scale(pygame.image.load("images/gameimages/back_intro.png"), (1200, 900))
 backgroundImg = pygame.transform.scale(pygame.image.load("images/mainbg.png"), (1200,900))
 instructionImg = pygame.transform.scale(pygame.image.load("images/gameimages/back_instruction.png"), (230,80))
 playImg = pygame.transform.scale(pygame.image.load("images/gameimages/back_play.png"), (230,80))
-nextImg = pygame.transform.scale(pygame.image.load("images/gameimages/gofront.png"), (30,30))
+next = pygame.transform.scale(pygame.image.load("images/gameimages/next.png"), (30,30))
 prevImg = pygame.transform.scale(pygame.image.load("images/gameimages/goback.png"), (30,30))
 cardBg = pygame.transform.scale(pygame.image.load("images/cardbackgroundImg.png"), (1200,900))
 logoTextImg = pygame.transform.scale(pygame.image.load("images/mainlogo.png"), (400,100))
@@ -34,13 +38,15 @@ dir3 = pygame.transform.scale(pygame.image.load("images/dir/3.png"), (330,550))
 dir4 = pygame.transform.scale(pygame.image.load("images/dir/4.png"), (330,550))
 dir5 = pygame.transform.scale(pygame.image.load("images/dir/5.png"), (330,550))
 dir6 = pygame.transform.scale(pygame.image.load("images/dir/6.png"), (330,550))
-dir7 = pygame.transform.scale(pygame.image.load("images/dir/7a.png"), (330,550))
+dir7a = pygame.transform.scale(pygame.image.load("images/dir/7a.png"), (330,550))
+dir7b = pygame.transform.scale(pygame.image.load("images/dir/7b.png"), (330,550))
 dir8 = pygame.transform.scale(pygame.image.load("images/dir/8.png"), (330,550))
 dir9 = pygame.transform.scale(pygame.image.load("images/dir/9.png"), (330,550))
 dir10 = pygame.transform.scale(pygame.image.load("images/dir/10.png"), (330,550))
 dir11 = pygame.transform.scale(pygame.image.load("images/dir/11.png"), (330,550))
 dir12 = pygame.transform.scale(pygame.image.load("images/dir/12.png"), (330,550))
-dir13 = pygame.transform.scale(pygame.image.load("images/dir/13a.png"), (330,550))
+dir13a = pygame.transform.scale(pygame.image.load("images/dir/13a.png"), (330,550))
+dir13b = pygame.transform.scale(pygame.image.load("images/dir/13b.png"), (330,550))
 dir14 = pygame.transform.scale(pygame.image.load("images/dir/14.png"), (330,550))
 dir15 = pygame.transform.scale(pygame.image.load("images/dir/15.png"), (330,550))
 dir16 = pygame.transform.scale(pygame.image.load("images/dir/16.png"), (330,550))
@@ -54,19 +60,90 @@ dir23 = pygame.transform.scale(pygame.image.load("images/dir/23.png"), (330,550)
 dir24 = pygame.transform.scale(pygame.image.load("images/dir/24.png"), (330,550))
 dir25 = pygame.transform.scale(pygame.image.load("images/dir/25.png"), (330,550))
 dir26 = pygame.transform.scale(pygame.image.load("images/dir/26.png"), (330,550))
-dir27 = pygame.transform.scale(pygame.image.load("images/dir/27a.png"), (330,550))
-dir28 = pygame.transform.scale(pygame.image.load("images/dir/28a.png"), (330,550))
+dir27a = pygame.transform.scale(pygame.image.load("images/dir/27a.png"), (330,550))
+dir27b = pygame.transform.scale(pygame.image.load("images/dir/27b.png"), (330,550))
+dir28a = pygame.transform.scale(pygame.image.load("images/dir/28a.png"), (330,550))
+dir28b = pygame.transform.scale(pygame.image.load("images/dir/28b.png"), (330,550))
 dir29 = pygame.transform.scale(pygame.image.load("images/dir/29.png"), (330,550))
 dir30 = pygame.transform.scale(pygame.image.load("images/dir/30.png"), (330,550))
 dir31 = pygame.transform.scale(pygame.image.load("images/dir/31.png"), (330,550))
 dir32 = pygame.transform.scale(pygame.image.load("images/dir/32.png"), (330,550))
 dir33 = pygame.transform.scale(pygame.image.load("images/dir/33.png"), (330,550))
 dir34 = pygame.transform.scale(pygame.image.load("images/dir/34.png"), (330,550))
+dir35a = pygame.transform.scale(pygame.image.load("images/dir/35a.png"), (330,550))
+dir35b = pygame.transform.scale(pygame.image.load("images/dir/35b.png"), (330,550))
+dir35c = pygame.transform.scale(pygame.image.load("images/dir/35c.png"), (330,550))
+dir35d = pygame.transform.scale(pygame.image.load("images/dir/35d.png"), (330,550))
+dir35e = pygame.transform.scale(pygame.image.load("images/dir/35e.png"), (330,550))
+dir35f = pygame.transform.scale(pygame.image.load("images/dir/35f.png"), (330,550))
+dir36 = pygame.transform.scale(pygame.image.load("images/dir/36.png"), (330,550))
+dir37 = pygame.transform.scale(pygame.image.load("images/dir/37.png"), (330,550))
+dir38 = pygame.transform.scale(pygame.image.load("images/dir/38.png"), (330,550))
+dir39 = pygame.transform.scale(pygame.image.load("images/dir/39.png"), (330,550))
+dir40 = pygame.transform.scale(pygame.image.load("images/dir/40.png"), (330,550))
+dir41 = pygame.transform.scale(pygame.image.load("images/dir/41.png"), (330,550))
+dir42 = pygame.transform.scale(pygame.image.load("images/dir/42.png"), (330,550))
+dir43a = pygame.transform.scale(pygame.image.load("images/dir/43a.png"), (330,550))
+dir43b = pygame.transform.scale(pygame.image.load("images/dir/43b.png"), (330,550))
+dir44 = pygame.transform.scale(pygame.image.load("images/dir/44.png"), (330,550))
+dir45 = pygame.transform.scale(pygame.image.load("images/dir/45.png"), (330,550))
+dir46 = pygame.transform.scale(pygame.image.load("images/dir/46.png"), (330,550))
+dir47 = pygame.transform.scale(pygame.image.load("images/dir/47.png"), (330,550))
+dir48 = pygame.transform.scale(pygame.image.load("images/dir/48.png"), (330,550))
+dir49 = pygame.transform.scale(pygame.image.load("images/dir/49.png"), (330,550))
+dir50 = pygame.transform.scale(pygame.image.load("images/dir/50.png"), (330,550))
+dir51 = pygame.transform.scale(pygame.image.load("images/dir/51.png"), (330,550))
+dir52 = pygame.transform.scale(pygame.image.load("images/dir/52.png"), (330,550))
+dir53 = pygame.transform.scale(pygame.image.load("images/dir/53.png"), (330,550))
+dir54 = pygame.transform.scale(pygame.image.load("images/dir/54.png"), (330,550))
+dir55 = pygame.transform.scale(pygame.image.load("images/dir/55.png"), (330,550))
+dir56 = pygame.transform.scale(pygame.image.load("images/dir/56.png"), (330,550))
+dir57a = pygame.transform.scale(pygame.image.load("images/dir/57a.png"), (330,550))
+dir57b = pygame.transform.scale(pygame.image.load("images/dir/57b.png"), (330,550))
+dir58 = pygame.transform.scale(pygame.image.load("images/dir/58.png"), (330,550))
+dir59 = pygame.transform.scale(pygame.image.load("images/dir/59.png"), (330,550))
+dir60 = pygame.transform.scale(pygame.image.load("images/dir/60.png"), (330,550))
+dir61 = pygame.transform.scale(pygame.image.load("images/dir/61.png"), (330,550))
+dir62 = pygame.transform.scale(pygame.image.load("images/dir/62.png"), (330,550))
+dir63 = pygame.transform.scale(pygame.image.load("images/dir/63.png"), (330,550))
+dir64 = pygame.transform.scale(pygame.image.load("images/dir/64.png"), (330,550))
+dir65a = pygame.transform.scale(pygame.image.load("images/dir/65a.png"), (330,550))
+dir65b = pygame.transform.scale(pygame.image.load("images/dir/65b.png"), (330,550))
+dir66 = pygame.transform.scale(pygame.image.load("images/dir/66.png"), (330,550))
+dir67 = pygame.transform.scale(pygame.image.load("images/dir/67.png"), (330,550))
+dir68 = pygame.transform.scale(pygame.image.load("images/dir/68.png"), (330,550))
+dir69a = pygame.transform.scale(pygame.image.load("images/dir/69a.png"), (330,550))
+dir69b = pygame.transform.scale(pygame.image.load("images/dir/69b.png"), (330,550))
+dir70 = pygame.transform.scale(pygame.image.load("images/dir/70.png"), (330,550))
+dir71 = pygame.transform.scale(pygame.image.load("images/dir/71.png"), (330,550))
+dir72 = pygame.transform.scale(pygame.image.load("images/dir/72.png"), (330,550))
+dir73 = pygame.transform.scale(pygame.image.load("images/dir/73.png"), (330,550))
+dir74 = pygame.transform.scale(pygame.image.load("images/dir/74.png"), (330,550))
+dir75 = pygame.transform.scale(pygame.image.load("images/dir/75.png"), (330,550))
+dir76 = pygame.transform.scale(pygame.image.load("images/dir/76.png"), (330,550))
+dir77 = pygame.transform.scale(pygame.image.load("images/dir/77.png"), (330,550))
+dir78 = pygame.transform.scale(pygame.image.load("images/dir/78.png"), (330,550))
+dir79 = pygame.transform.scale(pygame.image.load("images/dir/79.png"), (330,550))
+dir80 = pygame.transform.scale(pygame.image.load("images/dir/80.png"), (330,550))
+dir81 = pygame.transform.scale(pygame.image.load("images/dir/81.png"), (330,550))
+dir82 = pygame.transform.scale(pygame.image.load("images/dir/82.png"), (330,550))
+dir83 = pygame.transform.scale(pygame.image.load("images/dir/83.png"), (330,550))
+dir84 = pygame.transform.scale(pygame.image.load("images/dir/84.png"), (330,550))
+dir85 = pygame.transform.scale(pygame.image.load("images/dir/85.png"), (330,550))
+dir86 = pygame.transform.scale(pygame.image.load("images/dir/86.png"), (330,550))
+dir87 = pygame.transform.scale(pygame.image.load("images/dir/87.png"), (330,550))
+dir88 = pygame.transform.scale(pygame.image.load("images/dir/88.png"), (330,550))
+dir89 = pygame.transform.scale(pygame.image.load("images/dir/89.png"), (330,550))
+dir90 = pygame.transform.scale(pygame.image.load("images/dir/90.png"), (330,550))
 
-
-dirArray = [0, dir1, dir2, dir3, dir4, dir5, dir6, dir7, dir8, dir9, dir10, dir11, dir12, dir13, 
-dir14, dir15, dir16, dir17, dir18, dir19, dir20, dir21, dir22, dir23, dir24, dir25, dir26, dir27, dir28, 
-dir29, dir30, dir31, dir32]
+dirArray = [0, dir1, dir2, dir3, dir4, dir5, dir6, [dir7a, dir7b], dir8, dir9, dir10, dir11, dir12, [dir13a, dir13b], 
+dir14, dir15, dir16, dir17, dir18, dir19, dir20, dir21, dir22, dir23, dir24, dir25, dir26, [dir27a, dir27b], [dir28a, dir28b], 
+dir29, dir30, dir31, dir32, dir33, dir34, [dir35a, dir35b, dir35c, dir35d, dir35e, dir35f], dir36, dir37, dir38, dir39, 
+dir40, dir41, dir42, [dir43a, dir43b], 
+dir44, dir45, dir46, dir47, dir48, dir49, dir50, dir51, dir52, dir53, dir54, dir55, dir56, [dir57a, dir57b], dir58, 
+dir59, dir60, dir61, dir62, dir63, dir64, [dir65a, dir65b], dir66, dir67, dir68, [dir69a, dir69b], dir70, dir71, dir72, dir73,
+dir74, dir75, dir76, dir77, dir78, dir79, dir80, dir81, dir82, dir83, dir84, dir85, dir86, dir87, dir88, 
+dir89, dir90]
 
 #cardImages rightside 
 cardImg1 = pygame.transform.scale(pygame.image.load("images/cards/r1.png"), (330,550))
@@ -368,52 +445,61 @@ class InputBox:
 
 		########################################################
 		#risk matrix boxes
-		input_box1 = InputBox(500, 100, 50, 32, "I am Jewish (+10)")
-		input_box2 = InputBox(500, 150, 50, 32, "I am a mischling (+5)")
-		input_box3 = InputBox(500, 200, 50, 32, "I am married to an Aryan... (-5)")
-		input_box4 = InputBox(500, 250, 50, 32, "...AND we have living baptized children (-3)")
-		input_box5 = InputBox(500, 300, 50, 32, "I am married to a mischling (+2)")
-		input_box6 = InputBox(500, 350, 50, 32, "I am registered with the Jewish community (+3)")
-		input_box7 = InputBox(500, 400, 50, 32, "I have been in trouble with the authorities (+2)")
-		input_box8 = InputBox(500, 450, 50, 32, "Total Score")
-		input_boxExempt1 = InputBox(500,550, 50, 32, "I am working as an orderly (Exempt)")
-		input_boxExempt1.txt_surface = FONT.render("No", False, input_boxExempt1.color)
-		input_box9 = InputBox(650, 100, 50, 32, "")
-		input_box10 = InputBox(650, 150, 50, 32, "")
-		input_box11 = InputBox(650, 200, 50, 32, "")
-		input_box12 = InputBox(650, 250, 50, 32, "")
-		input_box13 = InputBox(650, 300, 50, 32, "")
-		input_box14 = InputBox(650, 350, 50, 32, "")
-		input_box15 = InputBox(650, 400, 50, 32, "")
-		input_box16 = InputBox(650, 450, 50, 32, "")
-		input_boxExempt2 = InputBox(650, 550, 50, 32, "")
-		input_boxExempt2.txt_surface = FONT.render("No", False, input_boxExempt2.color)
-		input_box17 = InputBox(800, 100, 50, 32, "")
-		input_box18 = InputBox(800, 150, 50, 32, "")
-		input_box19 = InputBox(800, 200, 50, 32, "")
-		input_box20 = InputBox(800, 250, 50, 32, "")
-		input_box21 = InputBox(800, 300, 50, 32, "")
-		input_box22 = InputBox(800, 350, 50, 32, "")
-		input_box23 = InputBox(800, 400, 50, 32, "")
-		input_box24 = InputBox(800, 450, 50, 32, "")
-		input_boxExempt3 = InputBox(800, 550, 50, 32, "")
-		input_boxExempt3.txt_surface = FONT.render("No", False, input_boxExempt3.color)
-		input_box25 = InputBox(950, 100, 50, 32, "")
-		input_box26 = InputBox(950, 150, 50, 32, "")
-		input_box27 = InputBox(950, 200, 50, 32, "")
-		input_box28 = InputBox(950, 250, 50, 32, "")
-		input_box29 = InputBox(950, 300, 50, 32, "")
-		input_box30 = InputBox(950, 350, 50, 32, "")
-		input_box31 = InputBox(950, 400, 50, 32, "")
-		input_box32 = InputBox(950, 450, 50, 32, "")
-		input_boxExempt4 = InputBox(950, 550, 50,  32, "")
-		input_boxExempt4.txt_surface = FONT.render("No", False, input_boxExempt4.color)
+		#risk matrix boxes
+script170 = open("scripts/script170.txt", "r")
+script171 = open("scripts/script171.txt", "r")
+script172 = open("scripts/script172.txt", "r")
+script173 = open("scripts/script173.txt", "r")
+script174 = open("scripts/script174.txt", "r")
+script175 = open("scripts/script175.txt", "r")
+script176 = open("scripts/script176.txt", "r")
+script177 = open("scripts/script177.txt", "r")
+input_box1 = InputBox(500, 100, 50, 32, script170.read())
+input_box2 = InputBox(500, 150, 50, 32, script171.read())
+input_box3 = InputBox(500, 200, 50, 32, script172.read())
+input_box4 = InputBox(500, 250, 50, 32, script173.read())
+input_box5 = InputBox(500, 300, 50, 32, script174.read())
+input_box6 = InputBox(500, 350, 50, 32, script175.read())
+input_box7 = InputBox(500, 400, 50, 32, script176.read())
+input_box8 = InputBox(500, 450, 50, 32, "Total Score")
+input_boxExempt1 = InputBox(500,550, 50, 32, script177.read())
+input_boxExempt1.txt_surface = FONT.render("No", False, input_boxExempt1.color)
+input_box9 = InputBox(650, 100, 50, 32, "")
+input_box10 = InputBox(650, 150, 50, 32, "")
+input_box11 = InputBox(650, 200, 50, 32, "")
+input_box12 = InputBox(650, 250, 50, 32, "")
+input_box13 = InputBox(650, 300, 50, 32, "")
+input_box14 = InputBox(650, 350, 50, 32, "")
+input_box15 = InputBox(650, 400, 50, 32, "")
+input_box16 = InputBox(650, 450, 50, 32, "")
+input_boxExempt2 = InputBox(650, 550, 50, 32, "")
+input_boxExempt2.txt_surface = FONT.render("No", False, input_boxExempt2.color)
+input_box17 = InputBox(800, 100, 50, 32, "")
+input_box18 = InputBox(800, 150, 50, 32, "")
+input_box19 = InputBox(800, 200, 50, 32, "")
+input_box20 = InputBox(800, 250, 50, 32, "")
+input_box21 = InputBox(800, 300, 50, 32, "")
+input_box22 = InputBox(800, 350, 50, 32, "")
+input_box23 = InputBox(800, 400, 50, 32, "")
+input_box24 = InputBox(800, 450, 50, 32, "")
+input_boxExempt3 = InputBox(800, 550, 50, 32, "")
+input_boxExempt3.txt_surface = FONT.render("No", False, input_boxExempt3.color)
+input_box25 = InputBox(950, 100, 50, 32, "")
+input_box26 = InputBox(950, 150, 50, 32, "")
+input_box27 = InputBox(950, 200, 50, 32, "")
+input_box28 = InputBox(950, 250, 50, 32, "")
+input_box29 = InputBox(950, 300, 50, 32, "")
+input_box30 = InputBox(950, 350, 50, 32, "")
+input_box31 = InputBox(950, 400, 50, 32, "")
+input_box32 = InputBox(950, 450, 50, 32, "")
+input_boxExempt4 = InputBox(950, 550, 50,  32, "")
+input_boxExempt4.txt_surface = FONT.render("No", False, input_boxExempt4.color)
 
-		input_boxes = [input_box1, input_box2, input_box3, input_box4, input_box5, input_box6, input_box7, input_box8,
-		               input_box9, input_box10,input_box11, input_box12, input_box13, input_box14, input_box15, input_box16,
-		               input_box17, input_box18,input_box19, input_box20, input_box21, input_box22, input_box23, input_box24,
-		               input_box25, input_box26,input_box27, input_box28, input_box29, input_box30, input_box31, input_box32,
-		               input_boxExempt1, input_boxExempt2, input_boxExempt3, input_boxExempt4]
+input_boxes = [input_box1, input_box2, input_box3, input_box4, input_box5, input_box6, input_box7, input_box8,
+		       input_box9, input_box10,input_box11, input_box12, input_box13, input_box14, input_box15, input_box16,
+		       input_box17, input_box18,input_box19, input_box20, input_box21, input_box22, input_box23, input_box24,
+		       input_box25, input_box26,input_box27, input_box28, input_box29, input_box30, input_box31, input_box32,
+		       input_boxExempt1, input_boxExempt2, input_boxExempt3, input_boxExempt4]
 
 
 class Menu(object): 
@@ -422,7 +508,7 @@ class Menu(object):
         self.playBox = pygame.Rect(785, 640, 230, 80)    
         homeScreen = True
 
-         
+
     #risk matrix stuff 
     def display_risk(self, index):
         num = index
@@ -1110,24 +1196,6 @@ class Menu(object):
                     input_box32.txt_surface = FONT.render('0', True, input_box32.color)
                     input_boxExempt4.txt_surface = FONT.render('Yes', True, input_boxExempt4.color)
 
-                # for box in input_boxes:
-                #     box.handle_event(event)
-                #     if input_box2.active == True:
-                #         if event.type == pg.MOUSEBUTTONDOWN:
-                #                 my_text = '5'
-                # if event.type == pg.KEYDOWN and box.updated == False:    
-                #     input_box2.txt_surface = FONT.render(my_text, True, input_box2.color)
-                #     input_box8.sum += int(my_text)
-                #     sum = str(input_box8.sum)
-                #     input_box8.txt_surface = FONT.render(sum, True, input_box2.color)
-                #     box.updated = True
-
-                
-
-
-            # for box in input_boxes:
-            #     box.update()
-
             screen.fill((30, 30, 30))
             for box in input_boxes:
                 box.draw(screen)
@@ -1137,17 +1205,26 @@ class Menu(object):
 
     def playGame(self,index): 
         # screen.fill(WHITE)
-        self.riskBox = pygame.Rect(100, 500, 230, 80)
+        self.riskBox = pygame.Rect(100, 500, 230, 80)    
         self.backBox = pygame.Rect(1100,0, 100,100)
+        longercards = 7, 13, 27, 28, 35, 43, 57, 65, 69 
+        
+        self.nextBox = pygame.Rect(980,650, 40, 40)
+
         screen.blit(cardBg, (0,0))
-        screen.blit(risk, (100,500))
+        screen.blit(alertbox, (100, 460))
+        screen.blit(alertbox2, (100, 525))
+        screen.blit(alertbox3, (100, 590))
+
+        screen.blit(risk, (88,440))
+
         screen.blit(prevImg, (1100, 0))
         events = pygame.event.get()  # this will return a que of events
         running = True 
         while running:  
             events = pygame.event.get()  
             for event in events: 
-                if index >= 1:
+                if index >= 1 and index in longercards == False :
                         screen.blit(cardLArray[index], (100,100))  
                         screen.blit(cardRArray[index], (435,100))   
                         screen.blit(dirArray[index], (835,100))
@@ -1157,14 +1234,21 @@ class Menu(object):
                     if event.key == pygame.K_LEFT and index > 1: 
                         index -= 1 
                         screen.blit(cardLArray[index], (100,100))  
-                        screen.blit(cardRArray[index], (435,100))   
-                        screen.blit(dirArray[index], (835,100))
+                        screen.blit(cardRArray[index], (435,100))
+                       	screen.blit(dirArray[index], (835,100))
+
 
                     if event.key == pygame.K_RIGHT and index < 90: 
                         index += 1 
                         screen.blit(cardLArray[index], (100,100))  
                         screen.blit(cardRArray[index], (435,100)) 
-                        screen.blit(dirArray[index], (835,100))
+                        if index in longercards: 
+                        	screen.blit(next, (1000,680))
+                        	screen.blit(dirArray[index][0], (835,100))
+                        	if self.nextBox.collidepoint(mouseposition) and mousepressed[0] == 1: 
+                        			print 'c'
+                        else: 
+                        	screen.blit(dirArray[index], (835,100))
 
                 mouseposition = pygame.mouse.get_pos()  
                 mousepressed = pygame.mouse.get_pressed()

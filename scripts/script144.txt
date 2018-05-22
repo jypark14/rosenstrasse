@@ -1,0 +1,1 @@
+2. Check to see if there is any special instruction for the next event. If so, read the instructions, and follow them.

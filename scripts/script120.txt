@@ -1,0 +1,1 @@
+- Scenario cards describe scenes. Some scenario cards are conditional depending on player decisions. The guide will

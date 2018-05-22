@@ -1,0 +1,1 @@
+characters to play. One character will be male, and one will be female. Each character will be

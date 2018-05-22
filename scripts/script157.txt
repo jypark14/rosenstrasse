@@ -1,0 +1,1 @@
+During the game, characters will take actions that change their legal status, and that make them more or less vulnerable
