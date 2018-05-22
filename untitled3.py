@@ -21,6 +21,8 @@ pygame.init()
 alertbox = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
 alertbox2 = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
 alertbox3 = pygame.transform.scale(pygame.image.load("images/gameimages/alertbox.png"), (210,60))
+b = pygame.transform.scale(pygame.image.load("images/gameimages/b.png"), (210,60))
+
 next2 = pygame.transform.scale(pygame.image.load("images/gameimages/next.png"), (30,30))
 
 sound = pygame.transform.scale(pygame.image.load("images/gameimages/sound.png"), (40,40))
@@ -1208,7 +1210,6 @@ class Menu(object):
         self.riskBox = pygame.Rect(88, 440, 230, 80)    
         self.backBox = pygame.Rect(1100,0, 100,100)        
         self.nextBox = pygame.Rect(1000, 680, 40, 40)
-        index2 = 0 
         longercards = 7, 13, 27, 28, 35, 43, 57, 65, 69 
         screen.blit(cardBg, (0,0))
         screen.blit(alertbox, (100, 460))
@@ -1216,8 +1217,6 @@ class Menu(object):
         screen.blit(alertbox3, (100, 590))
         screen.blit(risk, (88,440))
         screen.blit(prevImg, (1100, 0))
-
-        screen.blit(alertbox, (100, 10))
 
         events = pygame.event.get()  # this will return a que of events
         running = True 
@@ -1258,6 +1257,11 @@ class Menu(object):
                     	screen.blit(dir7b, (835, 100)) 
                     if event.key == pygame.K_DOWN and index == 43: 
                     	screen.blit(dir7b, (835, 100)) 
+                    if index == 1: 
+                    	screen.blit(alertbox, (100, 10))
+                    if index == 2: 
+                    	screen.blit(b, (100, 10))
+
 
                 mouseposition = pygame.mouse.get_pos()  
                 mousepressed = pygame.mouse.get_pressed()
